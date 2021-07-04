@@ -1,24 +1,55 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column              | Type    | Options                    |
+| ------------------- | ------- | -------------------------- |
+| nickname            | string  | null: false                |
+| email               | string  | null: false, unique: true  |
+| encrypted_password  | string  | null: false                |
+| last_name           | string  | null: false                |
+| first_name          | string  | null: false                |
+| last_name_kana      | string  | null: false                |
+| first_name_kana     | string  | null: false                |
+| birthday            | date    | null: false                |
 
-* Ruby version
+### Association
+- has_many :reservations
+- has_many :body_measurements
+- has_many :medications
 
-* System dependencies
+## reservationsテーブル
 
-* Configuration
+| Column              | Type     | Options                    |
+| ------------------- | -------- | -------------------------- |
+| department_id       | integer  | null: false                |
+| name                | string   | null: false                |
+| date                | date     | null: false                |
+| start_time          | string   | null: false                |
+| end_time            | string   | null: false                |
+| location            | string   | null: false                |
+| note                | text     | null: false                |
 
-* Database creation
+### Associations
+- belongs_to :user
 
-* Database initialization
+## body_measurementsテーブル
 
-* How to run the test suite
+| Column            | Type    | Options      |
+| ----------------- | ------- | -------------|
+| weight            | string  | null: false  |
+| height            | string  | null: false  |
+| body_temperature  | string  | null: false  |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Associations
+- belongs_to :user
 
-* Deployment instructions
+## medicationsテーブル
 
-* ...
+| Column         | Type     | Options       |
+| -------------- | -------- | --------------|
+| name           | string   | null: false   |
+| dose           | string   | null: false   |
+
+### Associations
+- belongs_to :user
