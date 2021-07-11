@@ -1,4 +1,4 @@
 ＜メイン画面＞
-カレンダー
 <%= link_to current_user.nickname, "#", class: "user-nickname" %>
 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+<div id='calendar' style="width: 80%; display: block; margin-left: auto; margin-right: auto"></div>
