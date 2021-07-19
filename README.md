@@ -20,15 +20,14 @@
 
 ## reservationsテーブル
 
-| Column              | Type     | Options                    |
-| ------------------- | -------- | -------------------------- |
-| department_id       | integer  | null: false                |
-| name                | string   | null: false                |
-| date                | date     | null: false                |
-| start_time          | string   | null: false                |
-| end_time            | string   | null: false                |
-| location            | string   | null: false                |
-| note                | text     | null: false                |
+| Column              | Type       | Options                    |
+| ------------------- | ---------- | -------------------------- |
+| department_id       | integer    | null: false                |
+| name                | string     | null: false                |
+| location            | string     | null: false                |
+| start               | datetime   | null: false                |
+| end                 | datetime   | null: false                |
+| note                | text       | null: false                |
 
 ### Associations
 - belongs_to :user
